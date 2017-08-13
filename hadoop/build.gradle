@@ -1,13 +1,13 @@
 buildscript {
-	ext {
-		springBootVersion = '1.5.6.RELEASE'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    ext {
+        springBootVersion = '1.5.6.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
 }
 
 apply plugin: 'java'
@@ -18,11 +18,21 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+    mavenCentral()
+    maven {
+        url 'https://repository.cloudera.com/content/repositories/releases/'
+    }
 }
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile('org.springframework.boot:spring-boot-starter')
+    compile('org.springframework.data:spring-data-hadoop:2.5.0.RELEASE')
+
+    // https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-core
+    compile group: 'org.apache.hadoop', name: 'hadoop-core', version: '2.6.0-mr1-cdh5.12.0', ext: 'pom'
+
+
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 }
