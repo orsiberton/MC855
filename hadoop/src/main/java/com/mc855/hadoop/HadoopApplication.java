@@ -1,5 +1,6 @@
 package com.mc855.hadoop;
 
+/*
 import com.mc855.hadoop.mapper.WordCountMapper;
 import com.mc855.hadoop.reducer.WordCountReducer;
 import org.apache.hadoop.conf.Configuration;
@@ -14,9 +15,20 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 import java.io.IOException;
+*/
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class HadoopApplication {
 
+    public static void main(String[] args) throws Exception {
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext(
+                "/META-INF/spring/application-context.xml", HadoopApplication.class);
+        context.registerShutdownHook();
+    }
+
+    /*
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
 
         // paths to input and output files
@@ -60,4 +72,5 @@ public class HadoopApplication {
         code = job.waitForCompletion(true) ? 0 : 1;
         System.exit(code);
     }
+    */
 }

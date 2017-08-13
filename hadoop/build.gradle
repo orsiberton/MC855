@@ -32,7 +32,11 @@ dependencies {
     // https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-core
     compile group: 'org.apache.hadoop', name: 'hadoop-core', version: '2.6.0-mr1-cdh5.12.0', ext: 'pom'
 
+    // https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-mapreduce-client-jobclient
+    runtime group: 'org.apache.hadoop', name: 'hadoop-mapreduce-client-jobclient', version: '2.6.0'
 
+    // https://mvnrepository.com/artifact/org.codehaus.groovy/groovy
+    runtime group: 'org.codehaus.groovy', name: 'groovy', version: '2.4.12'
 
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
