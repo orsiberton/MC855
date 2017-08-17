@@ -1,6 +1,5 @@
 package com.mc855.hadoop;
 
-/*
 import com.mc855.hadoop.mapper.WordCountMapper;
 import com.mc855.hadoop.reducer.WordCountReducer;
 import org.apache.hadoop.conf.Configuration;
@@ -13,34 +12,40 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
+import org.apache.hadoop.yarn.conf.YarnConfiguration;
 
 import java.io.IOException;
-*/
 
-import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/*import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
+
+@EnableAutoConfiguration
+@Configuration
+@ImportResource("/META-INF/spring/application-context.xml")*/
 public class HadoopApplication {
 
-    public static void main(String[] args) throws Exception {
-        AbstractApplicationContext context = new ClassPathXmlApplicationContext(
-                "/META-INF/spring/application-context.xml", HadoopApplication.class);
-        context.registerShutdownHook();
-    }
+   /* public static void main(String[] args) {
+        SpringApplication.run(HadoopApplication.class, args);
+    }*/
 
-    /*
+
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
 
         // paths to input and output files
+        /*Path inputPath = new Path("/README.txt");
+        Path outputPath = new Path("/user/bberton/output/");*/
         Path inputPath = new Path("build.gradle");
-        Path outputPath = new Path("results");
+        Path outputPath = new Path("/home/bberton/Documents/mc855/MC855/hadoop/results.result");
 
         // loads the default configuration
-        Configuration configuration = new Configuration(true);
+        Configuration configuration = new YarnConfiguration();
 
         // create the job
         Job job = Job.getInstance(configuration, "WordCount");
-        job.setJarByClass(WordCountMapper.class);
+        job.setJarByClass(HadoopApplication.class);
 
         // Configure the mapper
         job.setMapperClass(WordCountMapper.class);
@@ -72,5 +77,5 @@ public class HadoopApplication {
         code = job.waitForCompletion(true) ? 0 : 1;
         System.exit(code);
     }
-    */
+
 }

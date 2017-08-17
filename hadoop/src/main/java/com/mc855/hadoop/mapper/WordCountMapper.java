@@ -12,7 +12,12 @@ public class WordCountMapper extends Mapper<Object, Text, Text, IntWritable> {
     private Text word = new Text();
 
     @Override
-    protected void map(Object key, Text value, Context context) throws IOException, InterruptedException {
+    protected void setup(Context context) throws IOException, InterruptedException {
+        super.setup(context);
+    }
+
+    @Override
+    public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
         String line = value.toString();
         StringTokenizer lineTokenz = new StringTokenizer(line);
 

@@ -7,30 +7,31 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 	http://www.springframework.org/schema/hadoop http://www.springframework.org/schema/hadoop/spring-hadoop.xsd">
 
-    <context:property-placeholder location="hadoop.properties"/>
+    <context:property-placeholder />
 
     <configuration>
-        fs.defaultFS=hdfs://localhost:9000
-        yarn.resourcemanager.address=localhost:8042
+        fs.defaultFS=hdfs://hdfs-namenode:9000
+        yarn.resourcemanager.address=localhost:8032
         mapreduce.framework.name=yarn
         mapreduce.jobhistory.address=localhost:10020
+        yarn.application.classpath=/tmp/hadoop-yarn/*:/usr/local/hadoop/etc/hadoop:/usr/local/hadoop/etc/hadoop:/usr/local/hadoop/etc/hadoop:/usr/local/hadoop/share/hadoop/common/lib/*:/usr/local/hadoop/share/hadoop/common/*:/usr/local/hadoop/share/hadoop/hdfs:/usr/local/hadoop/share/hadoop/hdfs/lib/*:/usr/local/hadoop/share/hadoop/hdfs/*:/usr/local/hadoop/share/hadoop/yarn/lib/*:/usr/local/hadoop/share/hadoop/yarn/*:/usr/local/hadoop/share/hadoop/mapreduce/lib/*:/usr/local/hadoop/share/hadoop/mapreduce/*:/usr/local/hadoop/contrib/capacity-scheduler/*.jar:/usr/local/hadoop/share/hadoop/yarn/*:/usr/local/hadoop/share/hadoop/yarn/lib/*
     </configuration>
 
-    <job id="wordcountJob"
-         input-path="/user/"
-         output-path="/user/output/"
-         jar-by-class="com.mc855.hadoop.HadoopApplication"
+    <job id="WordCountJob"
+         input-path="/user/bberton/input/"
+         output-path="/user/bberton/output/result5"
+         jar="file:#{systemProperties['user.dir']}/build/libs/hadoop-0.0.1-SNAPSHOT.jar"
          mapper="com.mc855.hadoop.mapper.WordCountMapper"
-         reducer="com.mc855.hadoop.reducer.WordCountReducer"/>
+         reducer="com.mc855.hadoop.reducer.WordCountReducer"
+    />
 
     <!--<script id="setupScript" location="copy-files.groovy">
-        <property name="localSourceFile" value="build.gradle"/>
-        <property name="inputDir" value="/input/"/>
-        <property name="outputDir" value="/output/"/>
+        <property name="localSourceFile" value="result17"/>
+        <property name="inputDir" value="/user/input/"/>
+        <property name="outputDir" value="/user/output/"/>
     </script>-->
 
-    <job-runner id="runner" run-at-startup="true"
-                job-ref="wordcountJob"/>
+    <job-runner id="runner" job-ref="WordCountJob" run-at-startup="true"/>
 
     <!--<job-runner id="runner" run-at-startup="true"
                 pre-action="setupScript"

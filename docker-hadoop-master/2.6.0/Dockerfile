@@ -69,7 +69,7 @@ ADD start-yarn.sh /usr/local/bin/start-yarn.sh
 #	50475 = dfs.datanode.https.address	(HTTPS / Secure UI)
 # HDFS: Secondary NameNode (SNN)
 #	50090 = dfs.secondary.http.address	(HTTP / Checkpoint for NameNode metadata)
-EXPOSE 8020 9000 50070 50010 50020 50075 50090
+EXPOSE 8020 9000 50070 50010 50020 50075 50090 10020 19888
 
 
 
