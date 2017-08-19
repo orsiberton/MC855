@@ -4,8 +4,6 @@ namenode:
         - "50070:50070"
         - "9000:9000"
         - "8020:8020"
-        - "19888:19888"
-        - "10020:10020"
     command: hdfs namenode
     hostname: hdfs-namenode
 

@@ -31,12 +31,12 @@ public class HadoopApplication {
         SpringApplication.run(HadoopApplication.class, args);
     }*/
 
-
+    /*
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
 
         // paths to input and output files
-        /*Path inputPath = new Path("/README.txt");
-        Path outputPath = new Path("/user/bberton/output/");*/
+//        Path inputPath = new Path("/README.txt");
+//        Path outputPath = new Path("/user/bberton/output/");
         Path inputPath = new Path("build.gradle");
         Path outputPath = new Path("/home/bberton/Documents/mc855/MC855/hadoop/results.result");
 
@@ -77,5 +77,6 @@ public class HadoopApplication {
         code = job.waitForCompletion(true) ? 0 : 1;
         System.exit(code);
     }
+    */
 
 }
