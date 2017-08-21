@@ -1,4 +1,4 @@
-package com.mc855.hadoop.mapper;
+package com.mc855.hadoop.core.hadoop.mapper;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -7,7 +7,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
-public class WordCountMapper extends Mapper<Object, Text, Text, IntWritable> {
+public class ChampionshipResultsMapper extends Mapper<Object, Text, Text, IntWritable> {
 
     private Text word = new Text();
 
@@ -18,6 +18,9 @@ public class WordCountMapper extends Mapper<Object, Text, Text, IntWritable> {
 
     @Override
     public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
+
+        // TODO everything
+
         String line = value.toString();
         StringTokenizer lineTokenz = new StringTokenizer(line);
 

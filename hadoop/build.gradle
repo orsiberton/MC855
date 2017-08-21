@@ -18,10 +18,28 @@ repositories {
     }
 }
 
-
 dependencies {
+
     compile('org.springframework.data:spring-data-hadoop:2.5.0.RELEASE')
+    compile('org.apache.commons:commons-csv:1.4')
 
     // https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-core
     compile group: 'org.apache.hadoop', name: 'hadoop-core', version: '2.6.0-mr1-cdh5.12.0'
+
+    compile group: 'org.springframework', name: 'spring-context', version: "$spring_version"
+    compile group: 'org.springframework', name: 'spring-beans', version: "$spring_version"
+    compile group: 'org.springframework', name: 'spring-webmvc', version: "$spring_version"
+
+    compile group: 'org.eclipse.jetty', name: 'jetty-server', version: "$jetty_version"
+    compile group: 'org.eclipse.jetty', name: 'jetty-jmx', version: "$jetty_version"
+    compile group: 'org.eclipse.jetty', name: 'jetty-servlet', version: "$jetty_version"
+    compile group: 'org.eclipse.jetty', name: 'jetty-servlets', version: "$jetty_version"
+    compile group: 'org.eclipse.jetty', name: 'jetty-client', version: "$jetty_version"
+
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: "$jackson_version"
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jackson_version"
+}
+
+jar {
+    manifest { attributes 'Main-Class': 'com.mc855.hadoop.AppMain' }
 }
