@@ -1,0 +1,4 @@
+palavra1 palavra2 palavra3
+palavra1
+palavra2
+palavra2
