@@ -1,6 +1,6 @@
 package com.mc855.hadoop.core.hadoop;
 
-import com.mc855.hadoop.HadoopApplication;
+import com.mc855.hadoop.AppMain;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileStatus;
@@ -42,7 +42,7 @@ public class HadoopService {
 
     @PostConstruct
     public void init() throws Exception {
-        new FsShell(hdfs.getConf()).run(new String[] {"-chmod", "-R", "777", "/"});
+        new FsShell(hdfs.getConf()).run(new String[]{"-chmod", "-R", "777", "/"});
     }
 
     @PreDestroy
@@ -70,13 +70,12 @@ public class HadoopService {
     }
 
     public MapReduceJobResult executeJob(final MapReduceJobConfiguration jobConfiguration) throws IOException,
-                                                                                                  ClassNotFoundException,
-                                                                                                  InterruptedException {
+            ClassNotFoundException,
+            InterruptedException {
 
         Job job = new Job(this.hdfs.getConf(), UUID.randomUUID().toString());
-        job.setJarByClass(HadoopApplication.class);
+        job.setJarByClass(AppMain.class);
         job.setMapperClass(jobConfiguration.mapperClasz);
-        job.setCombinerClass(jobConfiguration.reducerClasz);
         job.setReducerClass(jobConfiguration.reducerClasz);
         job.setOutputKeyClass(jobConfiguration.outputKeyClasz);
         job.setOutputValueClass(jobConfiguration.outputValueClasz);
@@ -107,11 +106,9 @@ public class HadoopService {
         for (FileStatus status : filesStatus) {
             final BufferedReader br = new BufferedReader(new InputStreamReader(hdfs.open(status.getPath())));
 
-            String line = br.readLine();
-            while (isNotBlank(line)) {
-                line = br.readLine();
-
-                String[] words = line.split(" ");
+            String line;
+            while (isNotBlank(line = br.readLine())) {
+                String[] words = line.split("\t");
                 outputMap.put(words[0], words[1]);
             }
         }
@@ -121,11 +118,11 @@ public class HadoopService {
 
     public static class MapReduceJobConfiguration {
 
-        private Path remoteInputFilePath;
         private final Class<? extends Mapper> mapperClasz;
         private final Class<? extends Reducer> reducerClasz;
         private final Class outputKeyClasz;
         private final Class outputValueClasz;
+        private Path remoteInputFilePath;
 
         public MapReduceJobConfiguration(final Path remoteInputFilePath,
                                          final Class<? extends Mapper> mapperClasz,

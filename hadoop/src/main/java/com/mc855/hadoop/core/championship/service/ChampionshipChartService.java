@@ -20,7 +20,6 @@ import java.util.Map;
 public class ChampionshipChartService {
 
     private final ObjectMapper objectMapper;
-
     private final ChampionshipMatchResultsRetriever championshipMatchResultsRetriever;
     private final HadoopService hadoopService;
 

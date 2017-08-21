@@ -35,7 +35,10 @@ public class ChampionshipMatchResultsRetriever {
 
         final String fileName = year + ".csv";
 
-        final File inputFile = new File(premierLeagueResultsFolder + "/" + fileName);
+        // TODO fix me latter
+        //final File inputFile = new File(premierLeagueResultsFolder + "/" + fileName);
+        final File inputFile = new File("/home/bberton/Documents/mc855/MC855/hadoop/src/main/resources/championship-results/2001.csv");
+
         if (!inputFile.exists()) {
             return matchResults;
         }

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.ws.rs.PathParam;
 import java.io.IOException;
 import java.util.LinkedList;
 
@@ -20,7 +21,7 @@ public class ChampionshipChartController {
     ChampionshipChartService chartService;
 
     @RequestMapping(value = "/championship_chart/{year}", method = RequestMethod.GET)
-    public RetrieveChartResult processChart(@RequestParam("year") Integer year) throws IOException,
+    public RetrieveChartResult processChart(@PathParam("year") Integer year) throws IOException,
                                                                                        ClassNotFoundException,
                                                                                        InterruptedException {
 

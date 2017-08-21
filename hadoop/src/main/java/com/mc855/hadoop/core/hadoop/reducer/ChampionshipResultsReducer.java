@@ -9,9 +9,17 @@ import java.io.IOException;
 
 public class ChampionshipResultsReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 
+    public static Class<? extends WritableComparable> outputKeyClasz() {
+        return Text.class;
+    }
+
+    public static Class<? extends WritableComparable> outputValueClasz() {
+        return IntWritable.class;
+    }
+
     @Override
     public void reduce(Text text, Iterable<IntWritable> values, Context context) throws IOException,
-                                                                                        InterruptedException {
+            InterruptedException {
 
         // TODO everything
 
@@ -20,14 +28,6 @@ public class ChampionshipResultsReducer extends Reducer<Text, IntWritable, Text,
             sum += value.get();
         }
         context.write(text, new IntWritable(sum));
-    }
-
-    public static Class<? extends WritableComparable> outputKeyClasz() {
-        return Text.class;
-    }
-
-    public static Class<? extends WritableComparable> outputValueClasz() {
-        return Text.class;
     }
 
 }
