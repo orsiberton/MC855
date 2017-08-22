@@ -19,15 +19,15 @@ public class ChampionshipResultsReducer extends Reducer<Text, IntWritable, Text,
 
     @Override
     public void reduce(Text text, Iterable<IntWritable> values, Context context) throws IOException,
-            InterruptedException {
+                                                                                        InterruptedException {
 
-        // TODO everything
-
-        int sum = 0;
+        int scoreSumForTeam = 0;
         for (IntWritable value : values) {
-            sum += value.get();
+            scoreSumForTeam += value.get();
         }
-        context.write(text, new IntWritable(sum));
+        // text contains the team name
+        context.write(text, new IntWritable(scoreSumForTeam));
+
     }
 
 }
