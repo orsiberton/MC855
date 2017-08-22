@@ -66,6 +66,7 @@ public class HadoopService {
                 writer.write(line);
                 writer.newLine();
             }
+            writer.flush();
         }
 
         return remoteInputFile;
