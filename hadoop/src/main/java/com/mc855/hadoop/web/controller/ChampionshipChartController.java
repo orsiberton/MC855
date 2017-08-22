@@ -4,13 +4,13 @@ import com.mc855.hadoop.core.championship.model.ChampionshipChart;
 import com.mc855.hadoop.core.championship.service.ChampionshipChartService;
 import com.mc855.hadoop.web.model.RetrieveChartResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.ws.rs.PathParam;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.LinkedList;
 
 @RestController
@@ -21,9 +21,10 @@ public class ChampionshipChartController {
     ChampionshipChartService chartService;
 
     @RequestMapping(value = "/championship_chart/{year}", method = RequestMethod.GET)
-    public RetrieveChartResult processChart(@PathParam("year") Integer year) throws IOException,
+    public RetrieveChartResult processChart(@PathVariable("year") Integer year) throws IOException,
                                                                                        ClassNotFoundException,
-                                                                                       InterruptedException {
+                                                                                       InterruptedException,
+                                                                                       URISyntaxException {
 
         final ChampionshipChart chart = chartService.retrieveChartForYear(year);
         if (chart.getEntries().isEmpty()) {
