@@ -10,9 +10,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+
+import static java.lang.ClassLoader.getSystemResource;
 
 public class ChampionshipMatchResultsRetriever {
 
@@ -29,15 +33,14 @@ public class ChampionshipMatchResultsRetriever {
         this.premierLeagueResultsFolder = premierLeagueResultsFolder;
     }
 
-    public Collection<MatchResult> retrieveResultsForYear(final Integer year) throws IOException {
+    public Collection<MatchResult> retrieveResultsForYear(final Integer year) throws IOException, URISyntaxException {
 
         final Set<MatchResult> matchResults = new HashSet<>();
 
         final String fileName = year + ".csv";
 
-        // TODO fix me latter
-        //final File inputFile = new File(premierLeagueResultsFolder + "/" + fileName);
-        final File inputFile = new File("/home/bberton/Documents/mc855/MC855/hadoop/src/main/resources/championship-results/2001.csv");
+        final URL resultsCsvFileUrl = getSystemResource(premierLeagueResultsFolder + "/" + fileName);
+        final File inputFile = new File(resultsCsvFileUrl.toURI());
 
         if (!inputFile.exists()) {
             return matchResults;

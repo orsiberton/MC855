@@ -10,6 +10,7 @@ import com.mc855.hadoop.core.hadoop.reducer.ChampionshipResultsReducer;
 import org.apache.hadoop.fs.Path;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
@@ -33,7 +34,9 @@ public class ChampionshipChartService {
     }
 
     public ChampionshipChart retrieveChartForYear(final Integer year) throws IOException, InterruptedException,
-                                                                             ClassNotFoundException {
+                                                                             ClassNotFoundException,
+                                                                             URISyntaxException {
+
         final Collection<MatchResult> results = championshipMatchResultsRetriever.retrieveResultsForYear(year);
         final Collection<String> resultJsonList = toJson(results);
 
