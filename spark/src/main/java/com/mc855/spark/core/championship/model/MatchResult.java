@@ -1,4 +1,4 @@
-package com.mc855.hadoop.core.championship.model;
+package com.mc855.spark.core.championship.model;
 
 public class MatchResult {
 

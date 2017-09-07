@@ -1,12 +1,12 @@
-package com.mc855.hadoop.core.championship.service;
+package com.mc855.spark.core.championship.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mc855.hadoop.core.championship.model.ChampionshipChart;
-import com.mc855.hadoop.core.championship.model.MatchResult;
-import com.mc855.hadoop.core.hadoop.HadoopService;
-import com.mc855.hadoop.core.hadoop.mapper.ChampionshipResultsMapper;
-import com.mc855.hadoop.core.hadoop.reducer.ChampionshipResultsReducer;
+import com.mc855.spark.core.championship.model.ChampionshipChart;
+import com.mc855.spark.core.championship.model.MatchResult;
+import com.mc855.spark.core.hadoop.HadoopService;
+import com.mc855.spark.core.hadoop.mapper.ChampionshipResultsMapper;
+import com.mc855.spark.core.hadoop.reducer.ChampionshipResultsReducer;
 import org.apache.hadoop.fs.Path;
 
 import java.io.IOException;

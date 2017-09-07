@@ -1,6 +1,6 @@
-package com.mc855.hadoop.core.championship.service;
+package com.mc855.spark.core.championship.service;
 
-import com.mc855.hadoop.core.championship.model.MatchResult;
+import com.mc855.spark.core.championship.model.MatchResult;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 

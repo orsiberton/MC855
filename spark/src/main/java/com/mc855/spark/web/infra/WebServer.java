@@ -1,4 +1,4 @@
-package com.mc855.hadoop.web.infra;
+package com.mc855.spark.web.infra;
 
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;

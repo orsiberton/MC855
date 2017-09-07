@@ -1,8 +1,8 @@
-package com.mc855.hadoop.conf;
+package com.mc855.spark.conf;
 
-import com.mc855.hadoop.core.championship.service.ChampionshipChartService;
-import com.mc855.hadoop.core.championship.service.ChampionshipMatchResultsRetriever;
-import com.mc855.hadoop.core.hadoop.HadoopService;
+import com.mc855.spark.core.championship.service.ChampionshipChartService;
+import com.mc855.spark.core.championship.service.ChampionshipMatchResultsRetriever;
+import com.mc855.spark.core.hadoop.HadoopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

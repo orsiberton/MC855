@@ -1,6 +1,6 @@
-package com.mc855.hadoop.core.hadoop;
+package com.mc855.spark.core.hadoop;
 
-import com.mc855.hadoop.AppMain;
+import com.mc855.spark.AppMain;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileStatus;

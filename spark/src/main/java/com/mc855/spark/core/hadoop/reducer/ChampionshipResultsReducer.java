@@ -1,4 +1,4 @@
-package com.mc855.hadoop.core.hadoop.reducer;
+package com.mc855.spark.core.hadoop.reducer;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;

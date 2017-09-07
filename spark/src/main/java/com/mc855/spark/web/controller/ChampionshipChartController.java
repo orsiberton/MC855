@@ -1,8 +1,8 @@
-package com.mc855.hadoop.web.controller;
+package com.mc855.spark.web.controller;
 
-import com.mc855.hadoop.core.championship.model.ChampionshipChart;
-import com.mc855.hadoop.core.championship.service.ChampionshipChartService;
-import com.mc855.hadoop.web.model.RetrieveChartResult;
+import com.mc855.spark.core.championship.model.ChampionshipChart;
+import com.mc855.spark.core.championship.service.ChampionshipChartService;
+import com.mc855.spark.web.model.RetrieveChartResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +18,7 @@ import java.util.LinkedList;
 public class ChampionshipChartController {
 
     @Autowired
-    ChampionshipChartService chartService;
+    private ChampionshipChartService chartService;
 
     @RequestMapping(value = "/championship_chart/{year}", method = RequestMethod.GET)
     public RetrieveChartResult processChart(@PathVariable("year") Integer year) throws IOException,

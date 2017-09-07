@@ -1,4 +1,4 @@
-package com.mc855.hadoop.conf;
+package com.mc855.spark.conf;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.ObjectMapper;

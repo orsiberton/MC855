@@ -1,6 +1,6 @@
-package com.mc855.hadoop;
+package com.mc855.spark;
 
-import com.mc855.hadoop.web.infra.WebServer;
+import com.mc855.spark.web.infra.WebServer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;

@@ -1,6 +1,6 @@
-package com.mc855.hadoop.web.model;
+package com.mc855.spark.web.model;
 
-import com.mc855.hadoop.core.championship.model.ChampionshipChart;
+import com.mc855.spark.core.championship.model.ChampionshipChart;
 
 public class RetrieveChartResult {
 

@@ -1,7 +1,7 @@
-package com.mc855.hadoop.core.hadoop.mapper;
+package com.mc855.spark.core.hadoop.mapper;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mc855.hadoop.core.championship.model.MatchResult;
+import com.mc855.spark.core.championship.model.MatchResult;
 import org.apache.commons.math3.util.Pair;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
