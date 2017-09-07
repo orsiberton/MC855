@@ -2,6 +2,6 @@
 
 TODO
 
-Refer?ncias:
+Referências:
 - http://spark.apache.org/
 - https://github.com/SpringOne2GX-2014/SparkForSpring
