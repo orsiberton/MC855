@@ -47,7 +47,7 @@ public class SpringMvcConfiguration extends WebMvcConfigurerAdapter {
         final ObjectMapper objectMapper = new ObjectMapper();
 
         // ADD CUSTOM JACKSON CONFIGURATION
-        objectMapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        objectMapper.setPropertyNamingStrategy(PropertyNamingStrategy.CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES);
         objectMapper.setSerializationInclusion(Include.NON_EMPTY);
 
         return new MappingJackson2HttpMessageConverter(objectMapper);
