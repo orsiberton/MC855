@@ -1,5 +1,5 @@
 time ./benchmark-spark.sh
-  Starting Hadoop measurements...
+  Starting Spark measurements...
   Year 2000
 
   Time Elapsed: 1.780777s
