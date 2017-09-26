@@ -1,0 +1,105 @@
+time ./benchmark-spark.sh
+  Starting Hadoop measurements...
+  Year 2000
+
+  Time Elapsed: 1.780777s
+  Memory used:  8159M
+  CPU:  118.7
+
+  Year 2001
+
+  Time Elapsed: 0.470243s
+  Memory used:  8174M
+  CPU:  222.3
+
+  Year 2002
+
+  Time Elapsed: 0.412747s
+  Memory used:  8166M
+  CPU:  218.6
+
+  Year 2003
+
+  Time Elapsed: 0.394768s
+  Memory used:  8169M
+  CPU:  185.8
+
+  Year 2004
+
+  Time Elapsed: 0.363650s
+  Memory used:  8168M
+  CPU:  230
+
+  Year 2005
+
+  Time Elapsed: 0.727018s
+  Memory used:  8167M
+  CPU:  222.3
+
+  Year 2006
+
+  Time Elapsed: 0.323047s
+  Memory used:  8176M
+  CPU:  242.8
+
+  Year 2007
+
+  Time Elapsed: 0.327410s
+  Memory used:  8164M
+  CPU:  129.5
+
+  Year 2008
+
+  Time Elapsed: 0.327741s
+  Memory used:  8132M
+  CPU:  194
+
+  Year 2009
+
+  Time Elapsed: 0.380388s
+  Memory used:  8169M
+  CPU:  185.7
+
+  Year 2010
+
+  Time Elapsed: 0.455314s
+  Memory used:  8170M
+  CPU:  229.4
+
+  Year 2011
+
+  Time Elapsed: 0.249177s
+  Memory used:  8144M
+  CPU:  162.9
+
+  Year 2012
+
+  Time Elapsed: 0.259847s
+  Memory used:  8146M
+  CPU:  163.7
+
+  Year 2013
+
+  Time Elapsed: 0.276048s
+  Memory used:  8149M
+  CPU:  113.2
+
+  Year 2014
+
+  Time Elapsed: 0.010824s
+  Memory used:  8172M
+  CPU:  67.5
+
+  Year 2015
+
+  Time Elapsed: 0.273812s
+  Memory used:  8175M
+  CPU:  143.8
+
+  Year 2016
+
+  Time Elapsed: 0.253146s
+  Memory used:  8175M
+  CPU:  118.3
+
+./benchmark-spark.sh  1.44s user 6.51s system 51% cpu 15.438 total

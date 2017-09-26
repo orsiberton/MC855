@@ -1,0 +1,105 @@
+time ./benchmark-hadoop.sh
+  Starting Hadoop measurements...
+  Year 2000
+
+  Time Elapsed: 16.030860s
+  Memory used:  7529M
+  CPU:  79.2
+
+  Year 2001
+
+  Time Elapsed: 11.289865s
+  Memory used:  7636M
+  CPU:  39.4
+
+  Year 2002
+
+  Time Elapsed: 11.653284s
+  Memory used:  7690M
+  CPU:  68.3
+
+  Year 2003
+
+  Time Elapsed: 11.241318s
+  Memory used:  7668M
+  CPU:  40.9
+
+  Year 2004
+
+  Time Elapsed: 11.246398s
+  Memory used:  7745M
+  CPU:  79
+
+  Year 2005
+
+  Time Elapsed: 11.240459s
+  Memory used:  7877M
+  CPU:  74.6
+
+  Year 2006
+
+  Time Elapsed: 11.236700s
+  Memory used:  7920M
+  CPU:  56.4
+
+  Year 2007
+
+  Time Elapsed: 11.224447s
+  Memory used:  7927M
+  CPU:  47.8
+
+  Year 2008
+
+  Time Elapsed: 11.239469s
+  Memory used:  7918M
+  CPU:  42.1
+
+  Year 2009
+
+  Time Elapsed: 11.236619s
+  Memory used:  7950M
+  CPU:  104.4
+
+  Year 2010
+
+  Time Elapsed: 11.233094s
+  Memory used:  7938M
+  CPU:  41.7
+
+  Year 2011
+
+  Time Elapsed: 11.253977s
+  Memory used:  8043M
+  CPU:  57.8
+
+  Year 2012
+
+  Time Elapsed: 11.248252s
+  Memory used:  8049M
+  CPU:  60.5
+
+  Year 2013
+
+  Time Elapsed: 11.229971s
+  Memory used:  8052M
+  CPU:  43.6
+
+  Year 2014
+
+  Time Elapsed: 0.015497s
+  Memory used:  8052M
+  CPU:  54
+
+  Year 2015
+
+  Time Elapsed: 11.244873s
+  Memory used:  8107M
+  CPU:  43.2
+
+  Year 2016
+
+  Time Elapsed: 11.232697s
+  Memory used:  8138M
+  CPU:  43.2
+
+./benchmark-hadoop.sh  1.41s user 7.11s system 4% cpu 3:13.75 total
